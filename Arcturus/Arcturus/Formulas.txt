@@ -1,0 +1,4 @@
+﻿[Formules]
+
+Next Level experience cap : Last level Experience + 10 %;
+Movement : MoveSpeed * Direction;

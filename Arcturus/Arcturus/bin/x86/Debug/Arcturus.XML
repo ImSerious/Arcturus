@@ -1,0 +1,1759 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Arcturus</name>
+    </assembly>
+    <members>
+        <member name="T:Arcturus.Tools.InputManager">
+            <summary>
+            Represents a manager for all inputs from the player , keyboard and mouse.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Tools.InputManager.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Tools.InputManager.IsKeyPress(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Check a single press on a key.
+            </summary>
+            <param name="key">The key</param>
+            <returns>True if the key is pressed.False if not or still down</returns>
+        </member>
+        <member name="M:Arcturus.Tools.InputManager.IsKeyDown(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Check if a key is down.
+            </summary>
+            <param name="key">They key</param>
+            <returns>True if the key is still pressed.False if released</returns>
+        </member>
+        <member name="M:Arcturus.Tools.InputManager.IsMouseClick(Microsoft.Xna.Framework.Input.ButtonState)">
+            <summary>
+            Check a single press on the mouse ,left or right.
+            </summary>
+            <param name="button">Left or right button of the mouse</param>
+            <returns>True is left or button is be</returns>
+        </member>
+        <member name="M:Arcturus.Tools.InputManager.IsMouseDown(Microsoft.Xna.Framework.Input.ButtonState)">
+            <summary>
+            Check if a mouse button is down.
+            </summary>
+            <param name="button">Left of right button of the mouse</param>
+            <returns></returns>
+        </member>
+        <member name="M:Arcturus.Tools.InputManager.IsScrollUp">
+            <summary>
+            Check if the mouse wheel is scrolling up.
+            </summary>
+            <returns>True if up , false if not</returns>
+        </member>
+        <member name="M:Arcturus.Tools.InputManager.IsScrollDown">
+            <summary>
+            Check if the mouse wheel is scrolling down.
+            </summary>
+            <returns>True if down , false if not</returns>
+        </member>
+        <member name="P:Arcturus.Tools.InputManager.MousePosition">
+            <summary>
+            Get the current mouse position.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Screens.ScreenManager">
+            <summary>
+            A manager to switch and keep the state of each screen.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.ScreenManager.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.ScreenManager.SwitchScreen(Arcturus.Screens.Screen)">
+            <summary>
+            Change the old screen for the new one.
+            </summary>
+            <param name="screen">The screen to show</param>
+        </member>
+        <member name="P:Arcturus.Screens.ScreenManager.CurrentScreen">
+            <summary>
+            The screen that is updated and draw.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Screens.ScreenManager.CreationScreen">
+            <summary>
+            Screen of the creation of the character.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Screens.ScreenManager.WorldScreen">
+            <summary>
+            Screen of the world.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Screens.ScreenManager.GenerationScreen">
+            <summary>
+            Screen where the world is generated.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Items.Weapon.RangedWeapon">
+            <summary>
+            Represents a ranged weapon
+            </summary>
+        </member>
+        <member name="T:Arcturus.Items.Weapon.Weapon">
+            <summary>
+            Represents a weapon.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Items.Item">
+            <summary>
+            Represents an item of the game.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Items.Item.MaxCapacity">
+            <summary>
+            Max stack capacity
+            </summary>
+        </member>
+        <member name="M:Arcturus.Items.Item.AddQuantity(System.Int16@)">
+            <summary>
+            Add an amount to the quantity.Substract and tell a new stack is needed if the capacity is reached.
+            </summary>
+            <param name="amount">The amount to add to the stack</param>
+            <returns>True is a new stack is needed,false if not</returns>
+        </member>
+        <member name="M:Arcturus.Items.Item.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the item.
+            </summary>
+            <param name="spriteBatch">The batch used to draw.</param>
+        </member>
+        <member name="T:Arcturus.Items.Item.TypeItem">
+            <summary>
+            Type of item
+            </summary>
+        </member>
+        <member name="M:Arcturus.Items.Weapon.RangedWeapon.#ctor(System.Boolean,System.Byte,Arcturus.Worlds.Objects.Projectile)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Worlds.WorldGenerator">
+            <summary>
+            Represents a generator that can create worlds.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Worlds.WorldGenerator.MaxSpawnChest">
+            <summary>
+            Limit of chests to spawn
+            </summary>
+        </member>
+        <member name="F:Arcturus.Worlds.WorldGenerator.MaxSpawnPlants">
+            <summary>
+            Limit of plants to spawn
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.WorldGenerator.Generate(System.String,System.Int32)">
+            <summary>
+            Generate a world , with a seed.
+            </summary>
+            <param name="name">Name of the world</param>
+            <param name="seed">The seed used for generation</param>
+            <returns>The freshly created world</returns>
+        </member>
+        <member name="M:Arcturus.Worlds.WorldGenerator.Initialize(Arcturus.Worlds.World)">
+            <summary>
+            Initiazling the world.
+            </summary>
+            <param name="world">World to init</param>
+        </member>
+        <member name="M:Arcturus.Worlds.WorldGenerator.PlaceChests(Arcturus.Worlds.World)">
+            <summary>
+            Place random chests in the world.
+            </summary>
+            <param name="world">World to place chests in</param>
+        </member>
+        <member name="M:Arcturus.Worlds.WorldGenerator.PlacePlants(Arcturus.Worlds.World)">
+            <summary>
+            Place random plants in the world.
+            </summary>
+            <param name="world">World to place plants in</param>
+        </member>
+        <member name="T:Arcturus.Worlds.Weathers.Cloud">
+            <summary>
+             Represents a cloud.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.Cloud.#ctor(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="size"></param>
+            <param name="speed"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.Cloud.Update">
+            <summary>
+            Updating the current cloud.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.Cloud.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the current cloud.
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+        </member>
+        <member name="P:Arcturus.Worlds.Weathers.Cloud.IsActive">
+            <summary>
+            If the cloud is still active or not.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Worlds.Objects.WorldObject">
+            <summary>
+            Represents an object in the world.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.WorldObject.LoadContent">
+            <summary>
+            Loading content for the world object.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.WorldObject.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updating the world object.
+            </summary>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.WorldObject.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the world object.
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.WorldObject.IsActive">
+            <summary>
+            If the object is active or not.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.WorldObject.Sprite">
+            <summary>
+            Sprite of the object.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.WorldObject.WorldPosition">
+            <summary>
+            Object's world position.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.WorldObject.Hitbox">
+            <summary>
+            Hitbox of the object.
+            </summary>
+        </member>
+        <member name="T:Arcturus.UI.Bar">
+            <summary>
+            Represents a bar of a value , like HP , MP or EXP.
+            </summary>
+        </member>
+        <member name="M:Arcturus.UI.Bar.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="currentValue">Current value of the bar</param>
+            <param name="maxValue">Maximum value of the bar</param>
+            <param name="barWidth">Bar width</param>
+            <param name="barHeight">Bar height</param>
+            <param name="color">Bar foreground color</param>
+        </member>
+        <member name="M:Arcturus.UI.Bar.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the bar.
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+        </member>
+        <member name="P:Arcturus.UI.Bar.CurrentValue">
+            <summary>
+            Current value of the bar.
+            </summary>
+        </member>
+        <member name="P:Arcturus.UI.Bar.MaxValue">
+            <summary>
+            Maximum value of the bar
+            </summary>
+        </member>
+        <member name="P:Arcturus.UI.Bar.Position">
+            <summary>
+            Current position of the bar
+            </summary>
+        </member>
+        <member name="M:Arcturus.Tools.Extensions.NextFloat(System.Random,System.Single)">
+            <summary>
+            Gets a random float. 
+            </summary>
+            <param name="random">Random object</param>
+            <param name="seed">The seed for the generated number</param>
+            <returns>Random generated float</returns>
+        </member>
+        <member name="M:Arcturus.Tools.Extensions.NextFloat(System.Random,System.Single,System.Single)">
+            <summary>
+            Gets a random float.
+            </summary>
+            <param name="random">Random object</param>
+            <param name="beginRange">The begin range</param>
+            <param name="EndRange">The end range</param>
+            <returns>Random generated float</returns>
+        </member>
+        <member name="M:Arcturus.Tools.Extensions.NextShort(System.Random,System.Int16)">
+            <summary>
+            Gets a short float
+            </summary>
+            <param name="random">Random object</param>
+            <param name="seed">The seed for the generated number</param>
+            <returns></returns>
+        </member>
+        <member name="M:Arcturus.Tools.Extensions.Begin(Microsoft.Xna.Framework.Graphics.SpriteBatch,Arcturus.Engine.Camera)">
+            <summary>
+            Begin the draw of the spritebatch
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+            <param name="camera">Camera to draw on</param>
+        </member>
+        <member name="T:Arcturus.Screens.Screen">
+            <summary>
+            Represents a screen of the game.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.Screen.LoadContent">
+            <summary>
+            Where to load the content of the screen.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.Screen.Initialize">
+            <summary>
+            Where to initialize all screen elements.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.Screen.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Update the screen.
+            </summary>
+            <param name="gameTime">The current time of the game</param>
+        </member>
+        <member name="M:Arcturus.Screens.Screen.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the screen
+            </summary>
+            <param name="spriteBatch">Batch used to draw stuff</param>
+        </member>
+        <member name="M:Arcturus.Screens.Screen.GetInputs">
+            <summary>
+            Get the inputs of the player , mouse and keyboard.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.Screen.DrawDebug">
+            <summary>
+            Draw all debug informations.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Screens.Screen.IsActive">
+            <summary>
+            Tell if the game is the active windows.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Screens.Screen.ScreenManager">
+            <summary>
+            Reference to the screen manager ,for switching screens
+            </summary>
+        </member>
+        <member name="P:Arcturus.Screens.Screen.InputManager">
+            <summary>
+            Input manager of all screens.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Worlds.Weathers.Weather">
+            <summary>
+            Represents the weather of the world.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Worlds.Weathers.Weather.MaxParticulesWeather">
+            <summary>
+            Maximum particules used.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.Weather.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.Weather.Update(Microsoft.Xna.Framework.GameTime,Arcturus.Worlds.Tile[0:,0:])">
+            <summary>
+            Update the current weather.
+            </summary>
+            <param name="gameTime">Current game time</param>
+            <param name="tiles">Tiles of the world for collision detection</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.Weather.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw all the particules of the current weather , clouds , and sun/moon.
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.Weather.SpawnParticule(Arcturus.Worlds.Weathers.WeatherParticule,System.Int32)">
+            <summary>
+            Spawn a particule.
+            </summary>
+            <param name="particule">Particule to spawn</param>
+            <param name="amount">Amount of particule to spawn</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.Weather.SpawnCloud(System.Int32)">
+            <summary>
+            Spawn clouds are 
+            </summary>
+            <param name="amount">Amount of clouds to spawn</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.Weather.CheckCollision(Arcturus.Worlds.Weathers.WeatherParticule,Arcturus.Worlds.Tile[0:,0:])">
+            <summary>
+            Checking collision with the world.
+            </summary>
+            <param name="particule">Particle subject to collide.</param>
+            <param name="tiles">Tiles of the world</param>
+        </member>
+        <member name="T:Arcturus.Items.Stackable.Ammo">
+            <summary>
+            Represents an ammunition for ranged weapons.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Items.Stackable.Ammo.#ctor(System.Int32,System.Byte,Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="attackPower">Attack power of the ammo</param>
+            <param name="type">Type of the ammo</param>
+            <param name="texture">Texture of the ammo to draw</param>
+        </member>
+        <member name="P:Arcturus.Items.Stackable.Ammo.AttackPower">
+            <summary>
+            Attack power of the ammo.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Items.Stackable.Ammo.Type">
+            <summary>
+            Type of the ammo.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Items.ItemEffect">
+            <summary>
+            Represents an effect of a item which will cast a status on an entity , depending of the success rate.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Items.ItemEffect.#ctor(System.Int32,Arcturus.Mechanics.Status)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="successRate">The success rate of the effect</param>
+            <param name="status">The status which will be cast if its successful</param>
+        </member>
+        <member name="M:Arcturus.Items.ItemEffect.IsSuccessful">
+            <summary>
+            Calculate the chances to be successful.
+            </summary>
+            <returns>True if successful , false if not</returns>
+        </member>
+        <member name="P:Arcturus.Items.ItemEffect.Status">
+            <summary>
+            The status of the effect.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Items.Drop">
+            <summary>
+            Represents a drop of a monster.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Items.Drop.#ctor(Arcturus.Items.Item,System.Single)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="item">Item that will be drop</param>
+            <param name="probability">The probability of the item to be dropped</param>
+        </member>
+        <member name="P:Arcturus.Items.Drop.Item">
+            <summary>
+            Item to get.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Items.Drop.Probability">
+            <summary>
+            Probabily of getting the item.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Worlds.Tile">
+            <summary>
+            Represents a tile (16x16) of the world. 
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Tile.#ctor(System.Byte)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="type">Type of the tile</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Tile.Clone">
+            <summary>
+            Return a new tile with same properties.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Arcturus.Worlds.Tile.Wall">
+            <summary>
+            Wall of the tile.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Tile.Type">
+            <summary>
+            Type of the tile.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Tile.Collision">
+            <summary>
+            Type of collision of the tile.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Worlds.Tile.CollisionType">
+            <summary>
+            Type of collision of the tile.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Worlds.Tile.CollisionType.Passable">
+            <summary>
+            If the tile can be crossed.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Worlds.Tile.CollisionType.Blocking">
+            <summary>
+            If the tile can't be crossed.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Worlds.Tile.CollisionType.Platform">
+            <summary>
+            If the tile can be crossed , but only from the bottom.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Entities.Enemy">
+            <summary>
+            Represents a enemy.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Entities.Entity">
+            <summary>
+            Represents an entity of the world , subject to colisions , projectiles , etc ...
+            </summary>
+        </member>
+        <member name="F:Arcturus.Entities.Entity.MaxFallSpeed">
+            <summary>
+            Max fall speed.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Entities.Entity.MaxRunSpeed">
+            <summary>
+            Max run speed.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Entities.Entity.FallSpeed">
+            <summary>
+            Fall speed.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Entities.Entity.JumpPower">
+            <summary>
+            Power of the jump action
+            </summary>
+        </member>
+        <member name="F:Arcturus.Entities.Entity.FallSpeedHurtLimit">
+            <summary>
+            The limit when a fall will hurt the entity
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.LoadContent">
+            <summary>
+            Loading all the content of the entity.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.ExtraLoadContent">
+            <summary>
+            Extra loading content.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.Update(Microsoft.Xna.Framework.GameTime,Arcturus.Worlds.Tile[0:,0:])">
+            <summary>
+            Updating the entity.
+            </summary>
+            <param name="gameTime">Current time of the game</param>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.ExtraUpdate(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Update the extra stuff of the entity , depends on the inherant classes.
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the basic stuff of the entity
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.ExtraDraw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the extra stuff of the entity , depends on the inherant classes.
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.Move(Arcturus.Entities.Entity.Direction)">
+            <summary>
+            Move the entity in one direction.
+            </summary>
+            <param name="direction">Direction to move</param>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.Jump">
+            <summary>
+            Makes the entity jump.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.ApplyPhysic">
+            <summary>
+            Makes the entity influed by gravity and his velocity.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.CheckCollision(Arcturus.Worlds.Tile[0:,0:],Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Check if the entity is colliding with the world.
+            </summary>
+            <param name="tiles">Tiles of the world</param> 
+            <param name="nextHitbox">Next position</param>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.CheckImpact(System.Single)">
+            <summary>
+            Damage the entity ,depending of the velocity.
+            </summary>
+            <param name="velocity">Velocity at the impact time</param>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.AddStatus(Arcturus.Mechanics.Status,System.TimeSpan)">
+            <summary>
+            Adding a status to the entity.
+            </summary>
+            <param name="status">The status to add</param>
+            <param name="currentTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.ApplyStatus(Arcturus.Mechanics.Status)">
+            <summary>
+            Applying a status to the entity.
+            </summary>
+            <param name="status">The status</param>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.CheckStatus(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Checking all the statues to detect and remove those who are inactive.
+            </summary>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.TakeDamage(System.Int32)">
+            <summary>
+            Make damage to the entity.
+            </summary>
+            <param name="amount">Amount of damage</param>
+            <returns>True is the entity is now dead.False if still alive</returns>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.Death">
+            <summary>
+            Doing stuff when the entity die
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Entity.Drop">
+            <summary>
+            Get a random item from the drop list of the entity.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Arcturus.Entities.Entity.Position">
+            <summary>
+            Current position of the entity.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Entities.Entity.Hitbox">
+            <summary>
+            Bounds of the entity.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Entities.Entity.Direction">
+            <summary>
+            Represents the direction of the entity.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Entities.Entity.Direction.Left">
+            <summary>
+            Left direction
+            </summary>
+        </member>
+        <member name="F:Arcturus.Entities.Entity.Direction.Right">
+            <summary>
+            Right direction
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Enemy.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="name">Name of the enemy</param>
+            <param name="experienceReward">Experience rewarded when the enemy is killed</param>
+        </member>
+        <member name="M:Arcturus.Entities.Enemy.Update(Microsoft.Xna.Framework.GameTime,Arcturus.Worlds.Tile[0:,0:])">
+            <summary>
+            Updating the current enemy
+            </summary>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Entities.Enemy.Death">
+            <summary>
+            Enemy die and possibly dropping an item.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Entities.Enemy.ExperienceReward">
+            <summary>
+            Experience rewarded by killing the enemy.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Worlds.Objects.Plant">
+            <summary>
+            Represents a plant (Tree , flowers , etc ...).
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.Plant.#ctor">
+            <summary>
+            Empty constructor , for cloning purpose.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.Plant.#ctor(System.Byte,System.String,Arcturus.Sprite)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="id">ID of the plant</param>
+            <param name="name">Name of the plant</param>
+            <param name="sprite">Sprite of the plant</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.Plant.Clone">
+            <summary>
+            Clone the current plant.
+            </summary>
+            <returns>The cloned plant</returns>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.Plant.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Update the current plant.
+            </summary>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.Plant.Grow(System.TimeSpan)">
+            <summary>
+            Grow the plant and update harvest reward.
+            </summary>
+            <param name="lastGrowTime">Last grow time</param>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.Plant.ID">
+            <summary>
+            ID of the plant.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.Plant.GrowState">
+            <summary>
+            Current grow state of the plant.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.Plant.Name">
+            <summary>
+            Name of the plant.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Worlds.Objects.Projectile">
+            <summary>
+            Represents a projectile.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.Projectile.#ctor(System.Int32,System.Int32,System.Boolean,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Arcturus.Sprite)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="damage">Damage of the projectile</param>
+            <param name="speed">Speed of the projectile</param>
+            <param name="isFriendly">Friendly or not,will harm enemies or player</param>
+            <param name="position">Initial position of the projectile</param>
+            <param name="targetPosition">Target position of the projectile</param>
+            <param name="sprite">Sprite of the projectile</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.Projectile.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updating the current projectile.
+            </summary>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.Projectile.Die">
+            <summary>
+            When the particule meets a obstacle or running out of time.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.Projectile.Damage">
+            <summary>
+            Damage of the projectile.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.Projectile.Knockback">
+            <summary>
+            Knockback of the projectile.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.Projectile.IsFriendly">
+            <summary>
+            Is from a player or a monster.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.Projectile.CanCrossTile">
+            <summary>
+            If can cross tile or not.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.Projectile.Owner">
+            <summary>
+            Owner of the projectile.
+            </summary>
+        </member>
+        <member name="T:Arcturus.UI.UserInterface">
+            <summary>
+            Represents an user interface of a screen.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Tools.Debug">
+            <summary>
+            Class for debugging purpose.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Tools.Debug.WriteLog(System.String)">
+            <summary>
+            Write down in the log file.
+            </summary>
+            <param name="message">Message to write.</param>
+        </member>
+        <member name="T:Arcturus.Arcturus">
+            <summary>
+            The main class of the game.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Arcturus.Version">
+            <summary>
+            Current version of the game.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Arcturus.isDebugging">
+            <summary>
+            The debug state.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Arcturus.WindowWidth">
+            <summary>
+            The width of the game's window.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Arcturus.WindowHeight">
+            <summary>
+            The height of the game's window.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Arcturus.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Arcturus.Initialize">
+            <summary>
+            Initiliaze all stuff of the game.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Arcturus.LoadContent">
+            <summary>
+            Load every content needed.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Arcturus.UnloadContent">
+            <summary>
+            Unload all unused stuff.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Arcturus.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Update the current screen.
+            </summary>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Arcturus.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Draw the current screen.
+            </summary>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Items.Stackable.Stack.#ctor(Arcturus.Items.Item,System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="item">Item that will be stack</param>
+            <param name="initialQuantity">Initial quantity in the stack</param>
+        </member>
+        <member name="M:Arcturus.Items.Stackable.Stack.Add(System.Int32@)">
+            <summary>
+            Add an amount to the quantity.Substract and tell a new stack is needed if the capacity is reached.
+            </summary>
+            <param name="amount">The amount to add to the stack</param>
+            <returns>True is a new stack is needed,false if not</returns>
+        </member>
+        <member name="P:Arcturus.Items.Stackable.Stack.Quantity">
+            <summary>
+            Initial quantity in the stack.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Items.Stackable.Stack.Capacity">
+            <summary>
+            Maximum capacity of the stack.999 by default.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Items.Stackable.Stack.Item">
+            <summary>
+            Item that will be stack.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Worlds.World">
+            <summary>
+            Represents a world of Arcturus.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.World.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.World.LoadContent">
+            <summary>
+            Where to load all content of the world.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.World.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updating the whole world.
+            </summary>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Worlds.World.WorldCycle(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            All stuff in the world cycle goes here.Time , plants growth , event checking , etc ...
+            </summary>
+            <remarks>The cycle is every minutes</remarks>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Worlds.World.Draw(Arcturus.Engine.Camera,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Drawing the world and its objects.
+            </summary>
+            <remark>The world draw only the stuff that the player can see</remark>
+            <param name="camera">Camera of the world screen , to get the draw zone.</param>
+            <param name="spriteBatch">Batch used to draw</param>
+        </member>
+        <member name="M:Arcturus.Worlds.World.SpawnItem(Arcturus.Items.Item)">
+            <summary>
+            Spawn an lootable item in the world.
+            </summary>
+            <remarks>If the limit is reached , we remove the oldest element in the list and add the new one</remarks>
+            <param name="item">Item to add in the world</param>
+        </member>
+        <member name="M:Arcturus.Worlds.World.SpawnEntity(Arcturus.Entities.Entity)">
+            <summary>
+            Spawn an entity in the world.
+            </summary>
+            <remarks>If the limit is reached , we remove the oldest element in the list and add the new one</remarks>
+            <param name="entity">Entity to add in the world</param>
+        </member>
+        <member name="M:Arcturus.Worlds.World.SpawnProjectile(Arcturus.Worlds.Objects.Projectile)">
+            <summary>
+            Spawn a projectile in the world.
+            </summary>
+            <remarks>If the limit is reached , we remove the oldest element in the list and add the new one</remarks>
+            <param name="projectile">Projectile to add in the world</param>
+        </member>
+        <member name="M:Arcturus.Worlds.World.SpawnPlant(Arcturus.Worlds.Objects.Plant)">
+            <summary>
+            Spawn a plant in the world.
+            </summary>
+            <remarks>If the limit is reached , we remove the oldest element in the list and add the new one</remarks>
+            <param name="plant">Plant to add in the world</param>
+        </member>
+        <member name="M:Arcturus.Worlds.World.SpawnTile(Arcturus.Worlds.Tile,System.Int32,System.Int32)">
+            <summary>
+            Spawn a tile in the world.
+            </summary>
+            <param name="tile">Tile to spawn</param>
+            <param name="positionX">Position X of the tile</param>
+            <param name="positionY">Position Y of the tile</param>
+        </member>
+        <member name="M:Arcturus.Worlds.World.RemoveTile(System.Int32,System.Int32)">
+            <summary>
+            Remove a tile from the world.
+            </summary>
+            <param name="positionX">X coords</param>
+            <param name="positionY">Y coords</param>
+        </member>
+        <member name="M:Arcturus.Worlds.World.SpawnWall(System.Byte,System.Int32,System.Int32)">
+            <summary>
+            Spawn a wall in the world.
+            </summary>
+            <param name="wall">Wall to spawn</param>
+            <param name="positionX">Position X of the wall</param>
+            <param name="positionY">Position Y of the wall</param>
+        </member>
+        <member name="M:Arcturus.Worlds.World.Save(System.String)">
+            <summary>
+            Save the entire world in a ".arc" file.
+            </summary>
+            <remarks>A lot of short variables are used , to make the weight of the save file less big</remarks>
+            <param name="filePath">Path of the file</param>
+        </member>
+        <member name="M:Arcturus.Worlds.World.Load(System.String)">
+            <summary>
+            Load a world from a ".arc" file.
+            </summary>
+            <param name="filePath">Path of the file</param>
+            <returns></returns>
+        </member>
+        <member name="P:Arcturus.Worlds.World.Name">
+            <summary>
+            Name of the world.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.World.Seed">
+            <summary>
+            Seed used to generate the world.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.World.CurrentTime">
+            <summary>
+            Current time of the world.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.World.Tiles">
+            <summary>
+            Tiles of the world
+            </summary>
+        </member>
+        <member name="T:Arcturus.Worlds.Weathers.WeatherParticule">
+            <summary>
+            Represents a particule of a weather.Rain drop ,Snow flakes , etc ...
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.WeatherParticule.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="texture">Texture of the particule</param>
+            <param name="position">Initial position of the particule</param>
+            <param name="trajectory">Trajectory of the particule</param>
+            <param name="size">Size of the particule</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.WeatherParticule.Update(System.Single)">
+            <summary>
+            Updating the position of the particule.
+            </summary>
+            <param name="windSpeed"></param>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.WeatherParticule.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the particule.
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Weathers.WeatherParticule.Die">
+            <summary>
+            When the particule hit a tile.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Weathers.WeatherParticule.IsActive">
+            <summary>
+            If particule is active or not.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Weathers.WeatherParticule.Trajectory">
+            <summary>
+            The trajectory of the particule.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Utils">
+            <summary>
+            All tools used in the game.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Utils.LoadTexture2D(System.String)">
+            <summary>
+            Load an texture.
+            </summary>
+            <param name="assetName">The name of the texture</param>
+            <returns>The selected texture</returns>
+        </member>
+        <member name="M:Arcturus.Utils.LoadSpriteFont(System.String)">
+            <summary>
+            Load a sprite font.
+            </summary>
+            <param name="assetName">The name of the sprite font</param>
+            <returns>The selected sprite font</returns>
+        </member>
+        <member name="M:Arcturus.Utils.GetTrajectory(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Get the trajectory between two vectors.
+            </summary>
+            <param name="position">Initial vector</param>
+            <param name="targetPosition">Target vector</param>
+            <returns>The trajectory</returns>
+        </member>
+        <member name="M:Arcturus.Utils.GetTileWorldPosition(System.Int32,System.Int32)">
+            <summary>
+            Get the real position of a tile in Pixel format.
+            </summary>
+            <param name="x">X coord of the tile</param>
+            <param name="y">Y coord of the tile</param>
+            <returns>The world position</returns>
+        </member>
+        <member name="M:Arcturus.Utils.ConvertVector(System.Int32,System.Int32)">
+            <summary>
+            Create a vector with int coords.
+            </summary>
+            <param name="x">X coord</param>
+            <param name="y">Y coord</param>
+            <returns>A vector</returns>
+        </member>
+        <member name="M:Arcturus.Utils.ConvertVector(System.Double,System.Double)">
+            <summary>
+            Create a vector with double coords.
+            </summary>
+            <param name="x">X coord</param>
+            <param name="y">Y coord</param>
+            <returns>A vector</returns>
+        </member>
+        <member name="M:Arcturus.Utils.ConvertVector(Microsoft.Xna.Framework.Point)">
+            <summary>
+            Create a vector with a Point object.
+            </summary>
+            <param name="point">Point object</param>
+            <returns>A vector</returns>
+        </member>
+        <member name="M:Arcturus.Utils.CheckVersion(System.String,System.String)">
+            <summary>
+            Compare the game version and the file version.
+            </summary>
+            <param name="fileVersion">Version of the save file</param>
+            <param name="gameVersion">Version of the game</param>
+            <returns>-1 if newer file , 0 if correct version , 1 if old file</returns>
+        </member>
+        <member name="M:Arcturus.Utils.GetDesktopWidth">
+            <summary>
+            Get the width of the current screen resolution.
+            </summary>
+            <returns>Width of the screen resolution</returns>
+        </member>
+        <member name="M:Arcturus.Utils.GetDesktopHeight">
+            <summary>
+            Get the height of the current screen resolution.
+            </summary>
+            <returns>Height of the screen resolution</returns>
+        </member>
+        <member name="T:Arcturus.Engine.TileSet">
+            <summary>
+            Represents a set of tiles.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Engine.TileSet.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="texture"></param>
+        </member>
+        <member name="M:Arcturus.Engine.TileSet.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int16,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Draw the source of the tileset.
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+            <param name="tileType">Type of the tile</param>
+            <param name="position">Position in the world</param>
+        </member>
+        <member name="M:Arcturus.Engine.TileSet.GetTileSource(System.Int16)">
+            <summary>
+            Get the tile source.
+            </summary>
+            <param name="type">Type of the tile</param>
+            <returns>The source rectangle</returns>
+        </member>
+        <member name="T:Arcturus.Entities.Player">
+            <summary>
+            Represents the player.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Player.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Player.ExtraLoadContent">
+            <summary>
+            Loading extra content for the player.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Player.ExtraUpdate(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updating the player.
+            </summary>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Entities.Player.ExtraDraw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Extra draw to do.
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+        </member>
+        <member name="M:Arcturus.Entities.Player.AddItem(Arcturus.Items.Item)">
+            <summary>
+            Add an item to the backback of the player.
+            </summary>
+            <param name="item">Item to add</param>
+        </member>
+        <member name="M:Arcturus.Entities.Player.RemoveItem(Arcturus.Items.Item)">
+            <summary>
+            Remove an item from the backpack
+            </summary>
+            <param name="item">Item to remove</param>
+        </member>
+        <member name="M:Arcturus.Entities.Player.DropItem(Arcturus.Items.Item)">
+            <summary>
+            Drop an item in the world.
+            </summary>
+            <param name="item">Item to drop</param>
+        </member>
+        <member name="M:Arcturus.Entities.Player.UseItem(Arcturus.Items.Item)">
+            <summary>
+            Uses an item.
+            </summary>
+            <param name="item">Item to use</param>
+        </member>
+        <member name="M:Arcturus.Entities.Player.UseCurrentItem">
+            <summary>
+            Uses the current item.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Player.ModifyMoney(System.Int64)">
+            <summary>
+            Modifying the money (+ or -).
+            </summary>
+            <param name="amount">Amount to add or remove</param>
+        </member>
+        <member name="M:Arcturus.Entities.Player.ModifyExperience(System.Int32)">
+            <summary>
+            Modifying the experience (+ or -).
+            </summary>
+            <param name="amount">Amount to add or remove</param>
+        </member>
+        <member name="M:Arcturus.Entities.Player.RecoveHealth(System.Int32)">
+            <summary>
+            Recove an amount of health to the player.
+            </summary>
+            <param name="amount">Amount of health to recove</param>
+        </member>
+        <member name="M:Arcturus.Entities.Player.RecoveMana(System.Int32)">
+            <summary>
+            Recove an amount of mana to the player.
+            </summary>
+            <param name="amount">Amount of mana to recove</param>
+        </member>
+        <member name="M:Arcturus.Entities.Player.LevelUp">
+            <summary>
+            Level up the player , reseting his current experience and calculate the next level experience.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Player.Death">
+            <summary>
+            The player die,lost 5% of his current level experience.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Entities.Player.Save(System.String)">
+            <summary>
+            Save the player in a ".arc" file.
+            </summary>
+            <param name="filePath">File path to save the file on the hard drive.</param>
+        </member>
+        <member name="M:Arcturus.Entities.Player.Load(System.String)">
+            <summary>
+            Load the player from a ".arc" file.
+            </summary>
+            <param name="filePath">File path to load the file from the hard drive</param>
+            <returns></returns>
+        </member>
+        <member name="P:Arcturus.Entities.Player.CurrentExperience">
+            <summary>
+            Current experience of the player.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Entities.Player.NextLevelExperience">
+            <summary>
+            Amount of experience recquired to level up.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Entities.Player.Money">
+            <summary>
+            Current money of the player.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Entities.Player.CurrentItem">
+            <summary>
+            Current item of the player.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Entities.Player.BackPack">
+            <summary>
+            Backpack of the player.
+            </summary>
+        </member>
+        <member name="T:Arcturus.UI.CombatText">
+            <summary>
+            Represents a combat text.   
+            </summary>
+        </member>
+        <member name="M:Arcturus.UI.CombatText.#ctor(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="message">Message of the combat text</param>
+            <param name="position">Initial position</param>
+            <param name="color">Color of the text</param>
+        </member>
+        <member name="M:Arcturus.UI.CombatText.Update">
+            <summary>
+            Update the opacity and the position of the text.
+            </summary>
+        </member>
+        <member name="M:Arcturus.UI.CombatText.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the text.
+            </summary>
+            <param name="spriteBatch"></param>
+        </member>
+        <member name="P:Arcturus.UI.CombatText.IsActive">
+            <summary>
+            State of the text.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Screens.WorldScreen">
+            <summary>
+            Represents the screen which will draw the world.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.WorldScreen.#ctor(Arcturus.Worlds.World,Arcturus.Entities.Player)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.WorldScreen.LoadContent">
+            <summary>
+            Load the content of the screen.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.WorldScreen.Initialize">
+            <summary>
+            Initiliazing all the stuff.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.WorldScreen.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updating all the world screen.
+            </summary>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Screens.WorldScreen.GetInputs">
+            <summary>
+            Get the inputs of the player , mouse and keyboard.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.WorldScreen.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the screen
+            </summary>
+            <param name="spriteBatch">Batch used to draw stuff</param>
+        </member>
+        <member name="T:Arcturus.Screens.CreationScreen">
+            <summary>
+            Screen of character creation and world settings.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.CreationScreen.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.CreationScreen.LoadContent">
+            <summary>
+            Where to load the content of the screen.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.CreationScreen.Initialize">
+            <summary>
+            Where to initialize all screen elements.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.CreationScreen.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Update the screen.
+            </summary>
+            <param name="gameTime">The current time of the game</param>
+        </member>
+        <member name="M:Arcturus.Screens.CreationScreen.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the screen
+            </summary>
+            <param name="spriteBatch">Batch used to draw stuff</param>
+        </member>
+        <member name="M:Arcturus.Screens.CreationScreen.GetInputs">
+            <summary>
+            Get the inputs of the player , mouse and keyboard.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Items.DropList">
+            <summary>
+            Represents a list of drops.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Items.DropList.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Items.DropList.GetDrop">
+            <summary>
+            Get a random drop from the list
+            </summary>
+            <returns>Random drop</returns>
+        </member>
+        <member name="M:Arcturus.Items.DropList.SumProbabilities">
+            <summary>
+            Makes a sum of all probabilities to get the correct sum , even if the sum is not equal to 100%.
+            </summary>
+            <returns>The sum of the probabilities</returns>
+        </member>
+        <member name="T:Arcturus.Worlds.Objects.Chest">
+            <summary>
+            Represents a chest which contains items.
+            </summary>
+        </member>
+        <member name="F:Arcturus.Worlds.Objects.Chest.MaxCapacity">
+            <summary>
+            Constants
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Objects.Chest.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.Chest.IsLocked">
+            <summary>
+            State of the chest.Locked or not.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Worlds.Objects.Chest.ContainedItems">
+            <summary>
+            Items inside the chest.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Tools.GameServices">
+            <summary>
+            Represents the game services , such as content manager , graphics , etc.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Tools.GameServices.GetService``1">
+            <summary>
+            Get the service.
+            </summary>
+            <typeparam name="T">Type of service</typeparam>
+            <returns>The service</returns>
+        </member>
+        <member name="M:Arcturus.Tools.GameServices.AddService``1(``0)">
+            <summary>
+            Add a service.
+            </summary>
+            <typeparam name="T">Type of service</typeparam>
+            <param name="service">Service to add</param>
+        </member>
+        <member name="M:Arcturus.Tools.GameServices.RemoveService``1">
+            <summary>
+            Remove a service.
+            </summary>
+            <typeparam name="T">Type of service</typeparam>
+        </member>
+        <member name="P:Arcturus.Tools.GameServices.Instance">
+            <summary>
+            Instance of a service.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Sprite">
+            <summary>
+            Represents a 2D sprite 
+            </summary>
+        </member>
+        <member name="M:Arcturus.Sprite.#ctor">
+            <summary>
+            Empty constructor , for cloning purpose.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Sprite.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Simple constructor for non-animated sprite.
+            </summary>
+            <param name="texture">Texture</param>
+            <param name="position">Initial position</param>
+            <param name="color">Color of the sprite</param>
+        </member>
+        <member name="M:Arcturus.Sprite.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Complete constructor for non-animated sprite.
+            </summary>
+            <param name="texture">Texture</param>
+            <param name="position">Initial position</param>
+            <param name="size">Size of the sprite</param>
+            <param name="layer">Layer of the sprite</param>
+            <param name="color">Color of the sprite</param>
+        </member>
+        <member name="M:Arcturus.Sprite.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Simple constructor for animated sprite.
+            </summary>
+            <param name="texture">Texture</param>
+            <param name="frames">Number of frames of the animation</param>
+            <param name="position">Initial position</param>
+            <param name="color">Color of the sprite</param>
+        </member>
+        <member name="M:Arcturus.Sprite.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Complete constructor for animated sprite.
+            </summary>
+            <param name="texture">Texture</param>
+            <param name="frames">Number of frames of the animation</param>
+            <param name="position">Initial position</param>
+            <param name="size">Size of the sprite</param>
+            <param name="layer">Layer of the sprite</param>
+            <param name="color">Color of the sprite</param>
+        </member>
+        <member name="M:Arcturus.Sprite.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the sprite.
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+        </member>
+        <member name="M:Arcturus.Sprite.Animate(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Animate the sprite.
+            </summary>
+            <param name="gameTime">Current time of the game</param>
+        </member>
+        <member name="M:Arcturus.Sprite.Clone">
+            <summary>
+            Clone the current sprite.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Arcturus.Sprite.Rotation">
+            <summary>
+            Rotation rate of the sprite.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Sprite.Size">
+            <summary>
+            Size of the sprite.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Sprite.IsAnimated">
+            <summary>
+            If animated or not.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Sprite.Texture">
+            <summary>
+            Texture of the sprite.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Sprite.Position">
+            <summary>
+            Current position of the sprite.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Sprite.Hitbox">
+            <summary>
+            Hitbox of the sprite.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Sprite.Center">
+            <summary>
+            Center of the sprite.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Sprite.Color">
+            <summary>
+            Color of the sprite.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Sprite.AnimationSpeed">
+            <summary>
+            Animation speed of the sprite.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Sprite.SpriteEffect">
+            <summary>
+            Effect on the sprite.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Screens.GenerationScreen">
+            <summary>
+            Generation screen, where the world be generate.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Screens.GenerationScreen.#ctor(Arcturus.Entities.Player)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Items.Stackable.Consumable.#ctor(Arcturus.Mechanics.Status)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Items.Stackable.Consumable.UseOn(Arcturus.Entities.Player,System.TimeSpan)">
+            <summary>
+            Use the consumable on the target.
+            </summary>
+            <param name="player">The player</param>
+            <param name="currentTime">Current time</param>
+        </member>
+        <member name="T:Arcturus.Engine.Camera">
+            <summary>
+            The camera of the world screen.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Engine.Camera.#ctor(Arcturus.Entities.Player)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="player">Player followed by the camera</param>
+        </member>
+        <member name="M:Arcturus.Engine.Camera.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updating the current camera.
+            </summary>
+            <param name="gameTime">Current game time</param>
+        </member>
+        <member name="M:Arcturus.Engine.Camera.GetDrawZone">
+            <summary>
+            Get the current draw zone with the help of the camera position.
+            </summary>
+            <returns>The player draw zone</returns>
+        </member>
+        <member name="P:Arcturus.Engine.Camera.Scale">
+            <summary>
+            The zoom of the camera.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Engine.Camera.Player">
+            <summary>
+            The player followed by the camera.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Engine.Camera.Position">
+            <summary>
+            Position of the camera.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Engine.Camera.Transform">
+            <summary>
+            The matrix transformation of the camera.
+            </summary>
+        </member>
+        <member name="T:Arcturus.Mechanics.Status">
+            <summary>
+            Represents a status of an entity (empoisoned , burned , etc ...)
+            </summary>
+        </member>
+        <member name="M:Arcturus.Mechanics.Status.#ctor(System.String,System.Int16,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="name">Name of the effect</param>
+            <param name="amount">Amount of the effect (+500HP if hp buff, -50Hp if poison , +100 Attack if attack buff , etc ...)</param>
+            <param name="triggerRate">The trigger rate of the effect</param>
+            <param name="icon">The icon that will be displayed on the entity</param>
+        </member>
+        <member name="M:Arcturus.Mechanics.Status.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updating the status , to check if its still active or not.
+            </summary>
+            <param name="gameTime">Current time of the game</param>
+        </member>
+        <member name="M:Arcturus.Mechanics.Status.Reset(System.TimeSpan,System.Int16)">
+            <summary>
+            Reset the current status if its casted again on the entity.
+            </summary>
+            <param name="currentTime">Current time of the game.This will be used to last the effect one more time</param>
+            <param name="newAmount">New amount of the status.The current status will be reset only if the current status is weaker than the new one</param>
+        </member>
+        <member name="P:Arcturus.Mechanics.Status.IsActive">
+            <summary>
+            If the status is still active or not.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Mechanics.Status.Amount">
+            <summary>
+            Amount of the status.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Mechanics.Status.TimeLeft">
+            <summary>
+            Time left before the end of the status.
+            </summary>
+        </member>
+        <member name="P:Arcturus.Mechanics.Status.Icon">
+            <summary>
+            The icon of the status
+            </summary>
+        </member>
+        <member name="P:Arcturus.Mechanics.Status.TypeStatus">
+            <summary>
+            The type of status
+            </summary>
+        </member>
+        <member name="T:Arcturus.Mechanics.Status.Type">
+            <summary>
+            Thhe type of the status
+            </summary>
+        </member>
+        <member name="T:Arcturus.Worlds.Background">
+            <summary>
+            Represents a background of a biome.
+            </summary>
+        </member>
+        <member name="M:Arcturus.Worlds.Background.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="texture">Texture of the background</param>
+        </member>
+        <member name="M:Arcturus.Worlds.Background.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw the background.
+            </summary>
+            <param name="spriteBatch">Batch used to draw</param>
+        </member>
+    </members>
+</doc>

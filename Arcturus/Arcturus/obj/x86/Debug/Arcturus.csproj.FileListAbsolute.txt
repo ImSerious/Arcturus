@@ -1,0 +1,17 @@
+F:\Projects\Arcturus\Arcturus\Arcturus\obj\x86\Debug\Arcturus.csprojResolveAssemblyReference.cache
+F:\Projects\Arcturus\Arcturus\Arcturus\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Arcturus.exe
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Arcturus.pdb
+F:\Projects\Arcturus\Arcturus\Arcturus\obj\x86\Debug\Arcturus.exe
+F:\Projects\Arcturus\Arcturus\Arcturus\obj\x86\Debug\Arcturus.pdb
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Content\Fonts\Chat.xnb
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Content\Fonts\CombatText.xnb
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Content\Fonts\Default.xnb
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Content\Fonts\UserInterface.xnb
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Content\TileSets\tileset.xnb
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Content\Textures\Weather\raindrop.xnb
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Content\TileSets\wallset.xnb
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Content\Textures\Player\player.xnb
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Content\Textures\Weather\cloud.xnb
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Arcturus.exe.config
+F:\Projects\Arcturus\Arcturus\Arcturus\bin\x86\Debug\Arcturus.XML

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcturus", "Arcturus\Arcturus\Arcturus.csproj", "{2B8812BA-FB07-4748-B841-5E11BE8B6322}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "ArcturusContent", "Arcturus\ArcturusContent\ArcturusContent.contentproj", "{FBD6B814-5A9D-4245-953A-310AA06F8C5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcturusWorkbench", "ArcturusBenchwork\ArcturusWorkbench.csproj", "{461AF882-52EB-4306-B74F-A5B193251EA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B8812BA-FB07-4748-B841-5E11BE8B6322}.Debug|x86.ActiveCfg = Debug|x86
+		{2B8812BA-FB07-4748-B841-5E11BE8B6322}.Debug|x86.Build.0 = Debug|x86
+		{2B8812BA-FB07-4748-B841-5E11BE8B6322}.Release|x86.ActiveCfg = Release|x86
+		{2B8812BA-FB07-4748-B841-5E11BE8B6322}.Release|x86.Build.0 = Release|x86
+		{FBD6B814-5A9D-4245-953A-310AA06F8C5B}.Debug|x86.ActiveCfg = Debug|x86
+		{FBD6B814-5A9D-4245-953A-310AA06F8C5B}.Release|x86.ActiveCfg = Release|x86
+		{461AF882-52EB-4306-B74F-A5B193251EA2}.Debug|x86.ActiveCfg = Debug|x86
+		{461AF882-52EB-4306-B74F-A5B193251EA2}.Debug|x86.Build.0 = Debug|x86
+		{461AF882-52EB-4306-B74F-A5B193251EA2}.Release|x86.ActiveCfg = Release|x86
+		{461AF882-52EB-4306-B74F-A5B193251EA2}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
